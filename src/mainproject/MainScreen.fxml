@@ -6,6 +6,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainproject.MainScreenController">
    <children>
@@ -28,15 +30,30 @@
           <graphic>
               <ImageView>
                   <image>
-                      <Image url="img/Start.png" />
+                      <Image url="img/Start_1.png" />
                   </image>
               </ImageView> 
           </graphic>
       </Button>
-      <Button layoutX="311.0" layoutY="561.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="363.0" textAlignment="CENTER" />
-      <Button layoutX="311.0" layoutY="634.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="363.0" textAlignment="CENTER" />
+      <Button fx:id="loadButton" layoutX="311.0" layoutY="561.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="363.0" textAlignment="CENTER">
+          <graphic>
+              <ImageView>
+                  <image>
+                      <Image url="img/Load.png" />
+                  </image>
+              </ImageView> 
+          </graphic>
+      </Button>
+      <Button fx:id="optionsButton" layoutX="311.0" layoutY="634.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="363.0" textAlignment="CENTER">
+          <graphic>
+              <ImageView>
+                  <image>
+                      <Image url="img/Options.png" />
+                  </image>
+              </ImageView> 
+          </graphic>
+      </Button>
       <MediaView fx:id="mv" fitHeight="200.0" fitWidth="200.0" layoutX="802.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="14.0" layoutY="398.0" stroke="BLACK" strokeType="INSIDE" width="990.0" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="62.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="img/zelda.jpg" />
@@ -47,5 +64,11 @@
             <Image url="img/zelda.jpg" />
          </image>
       </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="23.0" layoutX="-18.0" layoutY="398.0" stroke="BLACK" strokeType="INSIDE" width="1031.0" />
+      <Text fill="WHITE" layoutX="8.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="4.0" text="Written and developed by Arda Dolonay, Ofosu Adjei-Afriyie and Noah Hinderle " textAlignment="CENTER" wrappingWidth="992.8034057617188">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
