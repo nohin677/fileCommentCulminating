@@ -17,8 +17,8 @@ import java.io.InputStreamReader;
  * @author USER
  */
 public abstract class MakeFile {
-     public String fileName;
-     public File textFile;
+     private String fileName;
+     private File textFile;
     
     public MakeFile(String fileName){
         this.fileName = fileName;
@@ -28,6 +28,13 @@ public abstract class MakeFile {
           textFile = new File(fileName);
           
     }
+    public String getFileName(){
+        return fileName;
+    }
+    public File getFile(){
+        return textFile;
+    }
+            
     
   
 }

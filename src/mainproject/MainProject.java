@@ -32,7 +32,7 @@ public class MainProject extends Application {
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
         primaryStage.setResizable(false);
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("The Great Adventure");
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image("img/sword1.png"));
         primaryStage.show();

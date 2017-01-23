@@ -56,7 +56,7 @@ public class GameScreenController implements Initializable {
     public CheckBox humanBox, pounderBox, maleBox, femaleBox, slimBox, fatBox, muscularBox, warriorBox, archerBox, knightBox;
 
     private ArrayList<String> allDescriptions = new ArrayList();
-    private String characterName, characterRace, characterGender, characterClass, characterBodyType;
+    public static String characterName, characterRace, characterGender, characterClass, characterBodyType;
     private MakeTextFile newFile;
     private boolean[] conditions = {false, false, false, false, false};
 
@@ -81,7 +81,7 @@ public class GameScreenController implements Initializable {
                 "Human is a very basic class",
                 "Pounder is a class for angry indvials");
 
-        newFile = new MakeTextFile("C:/Users/test/Documents/NetBeansProjects/MainProject/src/files/textFile.txt");
+        newFile = new MakeTextFile("C:/Users/USER/Documents/NetBeansProjects/MainProject/src/files/test.txt");
         try {
             newFile.createNewFile();
             newFile.createInputStream();
@@ -113,6 +113,7 @@ public class GameScreenController implements Initializable {
         }
     }
 
+    @FXML
     public void EnteredCharacterName(ActionEvent event) {
         if (!characterNameTextField.getText().matches("[a-zA-Z]+")) {
             characterLabel.setText("Your Character Name Can't Be Nothing,\n  contain numbers and spaces ");
@@ -132,26 +133,32 @@ public class GameScreenController implements Initializable {
         } */
     }
 
+    @FXML
     public void warriorDescription(Event eve) {
         description.setText(allDescriptions.get(0));
     }
 
+    @FXML
     public void archerDescription(Event event1) {
         description.setText(allDescriptions.get(1));
     }
 
+    @FXML
     public void knightDescription(Event event) {
         description.setText(allDescriptions.get(2));
     }
 
+    @FXML
     public void humanDescription(Event event) {
         description.setText(allDescriptions.get(3));
     }
 
+    @FXML
     public void pounderDescription(Event event) {
         description.setText(allDescriptions.get(4));
     }
 
+    @FXML
     public void checkEventChoseRace(Event event) {
         conditions[0] = true;
         if (humanBox.isSelected()) {
@@ -163,6 +170,7 @@ public class GameScreenController implements Initializable {
         }
     }
 
+    @FXML
     public void checkEventChooseGender(Event event) {
         conditions[1] = true;
         if (maleBox.isSelected()) {
@@ -174,6 +182,7 @@ public class GameScreenController implements Initializable {
         }
     }
 
+    @FXML
     public void checkEventChooseBodyType(Event event) {
         conditions[2] = true;
         if (fatBox.isSelected()) {
@@ -191,6 +200,7 @@ public class GameScreenController implements Initializable {
         }
     }
 
+    @FXML
     public void checkEventChooseClass(Event event) {
         conditions[3] = true;
         if (warriorBox.isSelected()) {
@@ -208,6 +218,7 @@ public class GameScreenController implements Initializable {
         }
     }
 
+    @FXML
     public void doneButton(Event event) throws Exception {
         int adder = 0;
         for (int i = 0; i < conditions.length; i++) {
