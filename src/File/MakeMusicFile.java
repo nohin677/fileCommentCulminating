@@ -53,7 +53,8 @@ public class MakeMusicFile extends MakeFile{
     
     /*
     returns the MediaPlayer
-    pre: 
+    pre: none
+    post: the media player has been returned
     */
     public MediaPlayer returnMediaPlayer() {
         return mp;

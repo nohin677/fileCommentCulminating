@@ -9,11 +9,13 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
- *
- * @author USER
+ * this is the input interface for the file pre: inputInterface must be
+ * implemented post: none
  */
 public interface InputInterface {
-    
-    public void createInputStream()throws FileNotFoundException;
-     public String OutPutReadLine()throws IOException;
+
+    //creates input stream for file
+    public void createInputStream() throws FileNotFoundException;
+
+    public String OutPutReadLine() throws IOException;
 }
