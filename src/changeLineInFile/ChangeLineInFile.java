@@ -19,7 +19,12 @@ import java.io.Writer;
 public class ChangeLineInFile {
 
     private MakeTextFile newTextFile;
-
+    
+    /*
+    changes a line in a text file
+    pre: none
+    post: a line in a text file has been changed
+    */
     public void changeALineInATextFile(String fileName, String newLine, int lineNumber) throws UnsupportedEncodingException, IOException {
         newTextFile = new MakeTextFile(fileName);
         String content = new String();
@@ -29,7 +34,12 @@ public class ChangeLineInFile {
         writeToFile(fileName, editedContent);
 
     }
-
+    
+    /*
+    returns the number of lines in a file
+    pre: none
+    post: the number of lines in a file has been returned
+    */
     private int numberOfLinesInFile(String content) {
         int numberOfLines = 0;
         int index = 0;
@@ -54,7 +64,12 @@ public class ChangeLineInFile {
 
         return numberOfLines;
     }
-
+    
+    /*
+    turns a file into a string array
+    pre: none
+    post: the file is now a string array
+    */
     private String[] turnFileIntoArrayOfStrings(String content, int lines) {
         String[] array = new String[lines];
         int index = 0;
@@ -94,7 +109,12 @@ public class ChangeLineInFile {
 
         return array;
     }
-
+    
+    /*
+    edits a line in the file
+    pre: none
+    post: the line in the file has been changed
+    */
     private String editLineInContent(String content, String newLine, int line) {
 
         int lineNumber = 0;
@@ -116,18 +136,24 @@ public class ChangeLineInFile {
 
         return content;
     }
-
+    /*
+    writes to the file
+    pre: none
+    post: the file has been written to
+    */
     private void writeToFile(String file, String content) throws FileNotFoundException, UnsupportedEncodingException, IOException {
-      newTextFile.createOutputStream();
-       // try(/*BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "utf-8"))*/){ 
-            //newTextFile.createNewFile();
-            //newTextFile.createOutputStream();
-      try {
-          newTextFile.returnBuffer().write(content);
-           } finally {
-        if ( newTextFile.returnBuffer() != null)  newTextFile.returnBuffer().close();
-    }
-            /*
+        newTextFile.createOutputStream();
+        // try(/*BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "utf-8"))*/){ 
+        //newTextFile.createNewFile();
+        //newTextFile.createOutputStream();
+        try {
+            newTextFile.returnBuffer().write(content);
+        } finally {
+            if (newTextFile.returnBuffer() != null) {
+                newTextFile.returnBuffer().close();
+            }
+        }
+        /*
         } catch (UnsupportedEncodingException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -139,16 +165,20 @@ public class ChangeLineInFile {
             e.printStackTrace();
         } */
     }
-
+    /*
+    reads the file
+    pre: none
+    post: the file has been read and 'content' has been returned
+    */
     private String readFile(String filename) {
         String content = null;
-        
+
         //File file = new File(filename);
         //FileReader reader = null;
         try {
-               newTextFile.createNewFile();
-               newTextFile.createFileReader();
-           // reader = new FileReader(file);
+            newTextFile.createNewFile();
+            newTextFile.createFileReader();
+            // reader = new FileReader(file);
             char[] chars = new char[(int) newTextFile.returnFile().length()];
             newTextFile.returnFileReader().read(chars);
             //reader.read(chars);
